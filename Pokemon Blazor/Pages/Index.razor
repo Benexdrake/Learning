@@ -1,0 +1,20 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+@await PokemonDB.LoadPokemon();
+
+@foreach (var item in PokemonDB.pokemonList)
+{
+   <div>
+        Pokemon Name: @item.Name<br>
+        <img src="@item.Sprites.FrontMale">
+    </div> 
+}
+    
+
+
+
+@code{
+    private 
+}
