@@ -9,11 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AnimeDl" Version="1.3.7" />
     <PackageReference Include="MongoDB.Driver" Version="2.17.0" />
-    <PackageReference Include="MyAnimeList.Net" Version="3.0.2" />
     <PackageReference Include="MySql.Data" Version="8.0.29" />
-    <PackageReference Include="SpotifyAPI.Web" Version="6.2.2" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.3.0" />
   </ItemGroup>
 
 </Project>
