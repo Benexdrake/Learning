@@ -8,87 +8,50 @@ namespace Forms_Spielerei
         public Form1()
         {
             InitializeComponent();
-            ReadData();
         }
 
-        private void ReadData()
+        private void panel_DragDrop(object sender, DragEventArgs e)
         {
-            List<Zutaten> z = ReadZutaten("Select * from Getraenk;");
-            for (int i = 0; i < z.Count; i++)
-            {
-                dataGridView1.Rows.Add(z[i].Name, z[i].Alk);
-                dataGridView1.Rows[i].Cells[2].Value = (dataGridView1.Rows[i].Cells[2] as DataGridViewComboBoxCell).Items[0];
-            }
+            ((Panel)e.Data.GetData(typeof(Panel))).Parent = (Panel)sender;
+
+            var tlp = (Panel)e.Data.GetData(typeof(Panel));
+            
+            tlp.BringToFront();
         }
 
-        private MySqlConnection con;
-        private MySqlDataReader reader;
-        private MySqlCommand cmd;
-
-
-        bool sqlConnection(string _sql)
+        private void panel_DragEnter(object sender, DragEventArgs e)
         {
-            try
-            {
-                string connection = (@$"Data Source = localhost; Port = 3306 ; Initial Catalog = rezept; User Id = Benex; Password = 111111;");
-
-                con = new MySqlConnection(connection);
-
-                con.Open();
-
-                cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = _sql;
-                cmd.ExecuteNonQuery();
-
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            e.Effect = DragDropEffects.Move;
+            
         }
 
-        private List<Zutaten> ReadZutaten(string _sql)
+        private void panel_MouseDown(object sender, MouseEventArgs e)
         {
-            List<Zutaten> z = new List<Zutaten>();
+            Panel panel = sender as Panel;
+            panel.DoDragDrop(panel, DragDropEffects.Move);
+            
+           
+        }
 
-            if (sqlConnection(_sql))
-            {
-                reader = cmd.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    
-                    while (reader.Read())
-                    {
-                       z.Add(new Zutaten(reader.GetString("G_Name"), reader.GetDouble("Alk")));
-                    }
-                }
-            }
-            con.Close();
-            return z;
+        private Panel Front(Panel panel)
+        {
+           return panel.BringToFront();
+        }
+
+        private void panel_MouseUp(object sender, MouseEventArgs e)
+        {
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string s = textBox1.Text + Environment.NewLine;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                bool isCellChecked = false;
-                if (dataGridView1.Rows[i].Cells[3].Value != null)
-                {
-                    isCellChecked = Convert.ToBoolean(dataGridView1.Rows[i].Cells[3].Value);
-                }
-
-                if (isCellChecked)
-                {
-                    s += dataGridView1.Rows[i].Cells[0].Value + " | " + dataGridView1.Rows[i].Cells[1].Value + "% | " + dataGridView1.Rows[i].Cells[2].Value + "cl " + Environment.NewLine;
-                }
-                
-            }
-            dataGridView1.EndEdit();
-
-            MessageBox.Show(s);
+            Panel panel = new Panel();
+            panel.BackColor = Color.Green;
+            panel.Height = 100;
+            panel.Dock = DockStyle.Top;
+            panel.MouseUp += panel_MouseUp;
+            panel.MouseDown += panel_MouseDown;
+            panel1.Controls.Add(panel);
         }
     }
 }

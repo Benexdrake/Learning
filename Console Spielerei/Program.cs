@@ -1,37 +1,27 @@
-﻿using MySQL_API;
+﻿using Azure.Storage.Blobs;
+using MySQL_API;
+using System.Net;
+
 namespace Console_Spielerei
 {
     class Program
     {
         public static void Main()
         {
-            List<string> list = new List<string>();
+            MysqlDB db = new("root", "Dragoonstorm1983", "3306", "sakila", "localhost");
 
-            var db = new MysqlDB("root", "InsertPassword", "3306", "sakila", "localhost");
+            var reader = db.Read("select * from actor;");
 
-            var IsLogin = db.LoginDB("select * from actor;");
 
-            if(IsLogin)
-            {
-                db.Reader = db.Cmd.ExecuteReader();
-                if(db.Reader.HasRows)
-                {
-                    while(db.Reader.Read())
-                    {
-                        list.Add(db.Reader.GetString("first_name"));
-                    }
-                }
-                db.Con.Close();
-            }
-            else
-            {
-                Console.WriteLine(db.ErrorMessage);
-            }
-
-            foreach (var item in list)
+            foreach (var item in reader)
             {
                 Console.WriteLine(item);
             }
+
+            Console.WriteLine("Ende");
+            Console.ReadLine();
         }
+
+        
     }
 }
