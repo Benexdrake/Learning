@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Drawing.Printing;
+using System.Printing;
+using System.Windows;
 
 namespace WPF_Test
 {
@@ -14,12 +17,24 @@ namespace WPF_Test
 
         private void btn_Login_Click(object sender, RoutedEventArgs e)
         {
-            if(tBox_Username.Text.Equals(username) && tBox_Password.Text.Equals(password))
+            PrintServer myPrintServer = new PrintServer(@"\\BBQ");
+
+            // List the print server's queues
+            PrintQueueCollection myPrintQueues = myPrintServer.GetPrintQueues();
+            String printQueueNames = "My Print Queues:\n\n";
+            foreach (PrintQueue pq in myPrintQueues)
             {
-                MessageBox.Show("Yay");
-                MainWindow main = new MainWindow();
-                main.Show();
+                printQueueNames += "\t" + pq.Name + "\n";
             }
+            MessageBox.Show(printQueueNames);
+            
+
+            //if(tBox_Username.Text.Equals(username) && tBox_Password.Text.Equals(password))
+            //{
+            //    MessageBox.Show("Yay");
+            //    MainWindow main = new MainWindow();
+            //    main.Show();
+            //}
         }
     }
 }

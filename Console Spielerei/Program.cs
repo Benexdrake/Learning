@@ -1,27 +1,15 @@
-﻿using Azure.Storage.Blobs;
-using MySQL_API;
-using System.Net;
+﻿using Dapper;
+using MySql;
+using MySql.Data.MySqlClient;
+using OpenQA.Selenium.DevTools;
 
 namespace Console_Spielerei
 {
     class Program
     {
-        public static void Main()
+        public static async Task Main()
         {
-            MysqlDB db = new("root", "Dragoonstorm1983", "3306", "sakila", "localhost");
-
-            var reader = db.Read("select * from actor;");
-
-
-            foreach (var item in reader)
-            {
-                Console.WriteLine(item);
-            }
-
-            Console.WriteLine("Ende");
-            Console.ReadLine();
+            
         }
-
-        
     }
 }
