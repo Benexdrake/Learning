@@ -21,8 +21,6 @@ namespace Graphic_Forms
             th = new Thread(ts);
             th.IsBackground = true;
             th.Start();
-            
-
         }
         //------------------
         Thread th;
