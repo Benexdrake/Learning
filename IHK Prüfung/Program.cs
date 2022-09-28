@@ -15,7 +15,7 @@ namespace IHK_Prüfung
                 Console.WriteLine("2. GA1_SI");
                 Console.WriteLine("3. GA2");
                 Console.WriteLine("4. AP1");
-                Console.WriteLine("Bitte eine Nummer von 1-3 eingeben!");
+                Console.WriteLine("Bitte eine Nummer von 1-4 eingeben!");
         
                 string choice = Console.ReadLine();
         

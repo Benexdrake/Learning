@@ -106,5 +106,15 @@ namespace IHK_Prüfung
                 to.AddPage(from.Pages[i]);
             }
         }
+
+
+        public static void PDFSplitter(string filepath, int[] site, int[] sitecount )
+        {
+            var split = filepath.Split('\\');
+            string fileName = split[split.Length-1];
+
+            Console.WriteLine(fileName);
+
+        }
     }
 }
