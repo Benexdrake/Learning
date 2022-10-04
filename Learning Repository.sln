@@ -60,7 +60,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptorDecryptor", "Encry
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IHK Prüfung", "IHK Prüfung\IHK Prüfung.csproj", "{69B3F418-0A19-4297-B0E4-1E6FABD7EE9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDF_Splitter", "PDF_Splitter\PDF_Splitter.csproj", "{0ABE0315-C4DE-4D08-9119-5FB3C156BA10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDF_Splitter", "PDF_Splitter\PDF_Splitter.csproj", "{0ABE0315-C4DE-4D08-9119-5FB3C156BA10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentaryCreator", "DocumentaryCreator\DocumentaryCreator.csproj", "{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -636,6 +638,26 @@ Global
 		{0ABE0315-C4DE-4D08-9119-5FB3C156BA10}.Release|x64.Build.0 = Release|Any CPU
 		{0ABE0315-C4DE-4D08-9119-5FB3C156BA10}.Release|x86.ActiveCfg = Release|Any CPU
 		{0ABE0315-C4DE-4D08-9119-5FB3C156BA10}.Release|x86.Build.0 = Release|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Debug|ARM.Build.0 = Debug|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Debug|x64.Build.0 = Debug|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Debug|x86.Build.0 = Debug|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Release|ARM.ActiveCfg = Release|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Release|ARM.Build.0 = Release|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Release|ARM64.Build.0 = Release|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Release|x64.ActiveCfg = Release|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Release|x64.Build.0 = Release|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Release|x86.ActiveCfg = Release|Any CPU
+		{CC3C3B02-DFF0-4513-8775-D2BEE6F3653D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

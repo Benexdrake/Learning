@@ -1,10 +1,9 @@
 ﻿using PDF_Splitter;
+using System.Runtime.CompilerServices;
+
 
 PDFSplitter pdf = new PDFSplitter();
 
-string[] files = await pdf.FindDocuments();
-
-foreach (var item in files)
-{
-    await pdf.Split("2;4;2;2;4", item);
-}
+pdf.Start("GA1-AE");
+pdf.Start("GA1-SI");
+pdf.Start("GA2");

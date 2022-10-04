@@ -12,38 +12,6 @@ namespace Console_Spielerei
     {
         public static async Task Main()
         {
-            int summe = 0;
-            int zahl = 0;
-            while(summe <= 10)
-            {
-                Console.WriteLine(zahl);
-                zahl = zahl + 1;
-                summe = summe + zahl;
-            }
-            Console.WriteLine(zahl);
-
-
-
-            //Thread th1 = new Thread(() => Test2());
-            //Thread th2 = new Thread(() => Test1());
-            //string name = th2.Name;
-            //string state = th2.ThreadState.ToString();
-            //th1.Start();
-            //th2.Start();
-            //
-            //async Task Test1()
-            //{
-            //    Console.WriteLine("Hello World");
-            //}
-            //
-            //async Task Test2()
-            //{
-            //    Console.WriteLine("Hello --");
-            //    await Task.Delay(1000);
-            //    Console.WriteLine("-- World");
-            //    
-            //}
-
             Console.ReadLine();
 
             //var secrets = new Secrets();
