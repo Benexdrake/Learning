@@ -11,8 +11,6 @@ namespace DocumentaryCreator
     {
         public void Start(int year)
         {
-            
-
             int months = GetMonths(year);
 
             CreateYearDirectory(year);
@@ -29,10 +27,6 @@ namespace DocumentaryCreator
 
                 CreateDocumentarys(year,month,days);
             }
-        }
-        public int GetYear()
-        {
-            return DateTime.Now.Year;
         }
 
         public int GetMonths(int year)
