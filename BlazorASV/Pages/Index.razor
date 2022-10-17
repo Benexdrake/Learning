@@ -1,0 +1,57 @@
+﻿@page "/"
+@using BlazorASV.Data
+
+<div class="input-group">
+    <input type="text" class="form-control col-9" placeholder="Enter Root like c://asv" @bind-value="mainPath" />
+    <input type="number" class="col-1" min="1" max="4" value="@quartal"/>
+    <button type="button" class="btn-danger input-group-text" @onclick="Test">Test</button>
+</div>
+@mainPath
+@code{
+
+    Logic l = new Logic();
+    string mainPath = string.Empty;
+    string errorMessage = string.Empty;
+
+    string[] filenames = { "ABSCHNITT1", "ABSCHNITT2", "ARZTGRUPPEN_CODE", "SCHLUESSELGUELTIGKEIT" };
+
+    int quartal = 4;
+
+    private async Task Test()
+    {
+
+        string rootPath = mainPath + $"\\{DateTime.Now.Year}\\{DateTime.Now.Year}_{quartal}\\Stand_{DateTime.Now.ToString("dd.MM.yyyy")}";
+        string zipPath = rootPath + "\\zip";
+        string unzipPath = rootPath + "\\unzip";
+        string mappingPath = rootPath + "\\mapping";
+
+
+        Console.WriteLine(zipPath);
+
+        var files = l.FindDownloadFiles("D:\\Institut-ba.de");
+
+        l.DownloadFiles(files, zipPath);
+        var zipfiles = l.FindZipFiles(zipPath);
+
+        l.UnzipFiles(unzipPath, zipfiles);
+
+        var csv = l.FindCSVFiles(unzipPath);
+
+
+
+        foreach (var file in filenames)
+        {
+            List<string> result = new();
+            foreach (var c in csv)
+            {
+                var read = l.ReadFile(c);
+                foreach (var r in read)
+                {
+                    result.Add(r);
+                }
+            }
+                await l.CombineFiles(mappingPath, result.ToArray(), file);
+        }
+
+    }
+}
