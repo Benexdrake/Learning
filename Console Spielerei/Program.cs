@@ -3,7 +3,6 @@ using HtmlAgilityPack;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
-using API.Amazon;
 using Org.BouncyCastle.Crypto.Operators;
 
 namespace Console_Spielerei
@@ -12,8 +11,10 @@ namespace Console_Spielerei
     {
         public static async Task Main()
         {
-            Console.ReadLine();
+            
 
+            Console.WriteLine(test);
+            
             //var secrets = new Secrets();
             //string startPage = "https://www.amazon.de/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2Fref%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=deflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&";
             //string[] pages =

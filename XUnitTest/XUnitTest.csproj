@@ -21,9 +21,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Portfolio\MySQL API\MySQL API.csproj" />
-    <ProjectReference Include="..\..\Portfolio\ws.API\WS.API.csproj" />
-  </ItemGroup>
-
 </Project>
