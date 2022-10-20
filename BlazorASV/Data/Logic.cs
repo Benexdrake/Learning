@@ -14,7 +14,7 @@ namespace BlazorASV.Data
 
         public string[] FindDownloadFiles(string url)
         {
-            var files = Directory.GetFiles(url, "*.zip");
+            var files = Directory.GetFiles(url, "*.zip").Where(x => x.Contains("ASV")).ToArray();
             return files;
         }
 
