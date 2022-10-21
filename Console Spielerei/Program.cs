@@ -30,7 +30,7 @@ void Print(string[] paths)
         }
     }
 }
-
+ 
 
 string[] GetDirectories(string path)
 {
