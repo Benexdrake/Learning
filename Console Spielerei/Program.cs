@@ -1,36 +1,50 @@
 using Console_Spielerei;
-using System.IO;
 
-Group g = new Group();
+Group group = new();
 
-List<string> list = new List<string>();
+string root = "D:\\Eigene Projekte";
+var directories = GetDirectories(root);
 
-// Start Directory
-//FindDirectories("D:\\Eigene Projekte");
+group = PrintGroup(directories);
 
-string root = "C:\\Users\\Benex\\Desktop\\Projects";
-
-var directories = Directory.GetDirectories(root,"",SearchOption.TopDirectoryOnly);
-
-Print(directories);
+Console.WriteLine();
 
 
-
-void Print(string[] paths)
+//Print(directories);
+// Old find Directions
+void Print(string[] dirs)
 {
-    Group g = new Group();
-    if (paths != null)
+    if(dirs != null)
     {
-        foreach (var path in paths)
+        foreach (var path in dirs)
         {
-            list.Add(path);
+            //list.Add(path);
             Console.WriteLine(path);
             var ps = GetDirectories(path);
             Print(ps);
         }
     }
 }
- 
+
+// Find Directions and saved as Group, from Start to Childs childs childs.
+Group PrintGroup(string[] dirs)
+{
+    if (dirs != null)
+    {
+        Group g = new Group();
+        foreach (var path in dirs)
+        {
+            var ps = GetDirectories(path);
+            var group = PrintGroup(ps);
+            if (group != null)
+                g.Children.Add(group);
+            g.TotalPath = path;
+            g.Name = new DirectoryInfo(path).Name;
+        }
+        return g;
+    }
+    return null;
+}
 
 string[] GetDirectories(string path)
 {
@@ -38,48 +52,18 @@ string[] GetDirectories(string path)
 }
 
 
-Group FindGroup(string path)
-{
-    var group = new Group();
 
 
-    return group;
-}
 
+//List<Group> groups = new List<Group>();
 
-//Group FindDirectory(string path)
-//{
-//    var group = new Group();
-//
-//    List<Group> groups = new List<Group>();
-//
-//    var name = new DirectoryInfo(path).Name;
-//
-//    var folder = path.Substring(0, (path.Length - name.Length));
-//
-//    var directories = Directory.GetDirectories(folder);
-//
-//    foreach (var d in directories)
-//    {
-//        groups.Add(new Group()
-//        {
-//            Name = new DirectoryInfo(d).Name,
-//            TotalPath = d
-//        });
-//    }
-//
-//    group.Children = groups;
-//    group.Name = name;
-//    group.TotalPath = path;
-//
-//    return group;
-//}
+//// Start Directory
+//FindDirectories("D:\\Eigene Projekte");
 
-Console.WriteLine();
 //string FindDirectories(string path)
 //{
 //    var directories = Directory.GetDirectories(path);
-//    
+    
 //    foreach (var directory in directories)
 //    {
 //        List<Group> groupsChilds = new List<Group>();
@@ -88,7 +72,7 @@ Console.WriteLine();
 //        {
 //            Group group = new Group();
 //            FindDirectories(directory);
-//
+
 //            var childs = Directory.GetDirectories(directory);
 //            foreach (var child in childs)
 //            {
@@ -114,7 +98,7 @@ Console.WriteLine();
 //{
 //    Console.WriteLine(">>Total Path: {0}",item.TotalPath);
 //    Console.WriteLine();
-//    
+    
 //    foreach (var childs in item.Children)
 //    {
 //        Console.WriteLine(">>>>> Child of {0}: {1} ",item.Name, childs.Name);
@@ -122,7 +106,7 @@ Console.WriteLine();
 //    Console.WriteLine();
 //}
 
-//string downloadFolder = "F:\\BenR\\LogicTesting\\Download\\";
+////string downloadFolder = "F:\\BenR\\LogicTesting\\Download\\";
 //
 //string mainPath = "F:\\BenR\\LogicTesting\\Gradient-Abrechnung 1\\06_EBM2000+\\# Strecke ASV\\ASV Leistungsstammdaten\\2022\\2022_4\\Stand_18.10.2022";
 //
