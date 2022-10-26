@@ -1,4 +1,6 @@
-﻿using System.IO.Compression;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
 using System.Text.RegularExpressions;
 
 namespace Console_Spielerei;
@@ -12,17 +14,6 @@ public class BereitstellungLogic
     public BereitstellungLogic()
     {
         folderNumber = 1;
-    }
-
-    public IEnumerable<Group> GetFolderList(string stammverzeichnis)
-    {
-        var groups = new List<Group>();
-        var directories = new DirectoryInfo(stammverzeichnis).GetDirectories();
-        foreach (var directory in directories)
-        {
-            FindDirectories(directory, null, groups);
-        }
-        return groups;
     }
 
     // Path ist der Ordner Stand_Datum, darin befindet sich ein Gezippt, Ungezippt_X und Bereitstellung_X Ordner
@@ -50,7 +41,7 @@ public class BereitstellungLogic
 
         //Step 5:
         // Die List Models zu einer agc_fgc mapping/appendix Datei convertieren und als .csv speichern.
-        AppendixAGC_FGC(agc);
+        AppendixAGC_FGC(agc, path);
 
     }
 
@@ -103,12 +94,14 @@ public class BereitstellungLogic
 
     private Arztgruppen_Code[] GetAGC(string path)
     {
-        string fileName = "ABSCHNITT1";
+        string fileName = "ARZTGRUPPEN_CODE.csv";
         List<Arztgruppen_Code> list = new();
-        var folder = $"\\{MappingFolderName}{folderNumber}";
+        var folder = $"\\{MappingFolderName}_{folderNumber}";
 
-        var files = File.ReadAllLines(path + folder).Where(x => x.Contains(fileName)).ToList();
-        if (files.Count > 0)
+        var find = Directory.GetFiles(path + folder, fileName).FirstOrDefault();
+
+        var files = File.ReadAllLines(find);
+        if (files.Length > 0)
         {
             foreach (var file in files)
             {
@@ -129,11 +122,20 @@ public class BereitstellungLogic
         return list.ToArray();
     }
 
-
-
-    private void AppendixAGC_FGC(Arztgruppen_Code[] agc)
+    private async Task AppendixAGC_FGC(Arztgruppen_Code[] agcs, string path)
     {
         // Zusammenführen der Spalten als neue .csv Datei.
+        // 0, 2, 5
+
+        List<string> newFile = new();
+        newFile.Add("Krankheitsbild; ARZT; Arztgruppencode; FachgruppencodeFGC; Zusatzweiterbildung; Teamebene");
+
+        foreach (var agc in agcs)
+        {
+            string file = $"{agc.ZeitraumID}; {agc.Arztgruppe}; {int.Parse(agc.ArztgruppenCode)}; ; ; ;";
+            newFile.Add(file);
+        }
+        await File.WriteAllLinesAsync(Path.Combine($"{path}\\{MappingFolderName}_{folderNumber}", $"AGC_FGC_Test.csv"), newFile);
     }
 
     private async Task SaveFiles(string[] files, string searchTerm, string path)
@@ -211,7 +213,6 @@ public class BereitstellungLogic
     {
         return new DirectoryInfo(path).FullName;
     }
-
 
     #endregion
 }
