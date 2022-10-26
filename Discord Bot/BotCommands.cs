@@ -1,6 +1,4 @@
-﻿using API;
-using API.Crunchyroll;
-using Discord;
+﻿using Discord;
 using Discord.Commands;
 using GiphyDotNet.Manager;
 using GiphyDotNet.Model.Parameters;
@@ -252,75 +250,75 @@ namespace Discord_Bot
             var client = new MongoClient("mongodb://localhost:27017");
             var db = client.GetDatabase("Crunchyroll");
             
-            IMongoCollection<Anime> collection = db.GetCollection<Anime>("Animes");
+            //IMongoCollection<Anime> collection = db.GetCollection<Anime>("Animes");
 
-            var Anime = from anime in collection.AsQueryable()
-                        where anime.Name.ToLower().Contains(param)
-                        select anime;
+           // var Anime = from anime in collection.AsQueryable()
+           //             where anime.Name.ToLower().Contains(param)
+           //             select anime;
 
-            var result = Anime.FirstOrDefault();
+            //var result = Anime.FirstOrDefault();
 
-            if (result != null)
-            {
+            //if (result != null)
+            //{
 
 
-                var fields = new List<EmbedFieldBuilder>();
+            //    var fields = new List<EmbedFieldBuilder>();
 
-                fields.Add(new EmbedFieldBuilder()
-                {
-                    Name = "Seasons",
-                    Value = result.Seasons.Length,
-                    IsInline = true
-                });
+            //    fields.Add(new EmbedFieldBuilder()
+            //    {
+            //        Name = "Seasons",
+            //        Value = result.Seasons.Length,
+            //        IsInline = true
+            //    });
 
-                fields.Add(new EmbedFieldBuilder()
-                {
-                    Name = "Episodes",
-                    Value = result.Episodes,
-                    IsInline = true
-                });
+            //    fields.Add(new EmbedFieldBuilder()
+            //    {
+            //        Name = "Episodes",
+            //        Value = result.Episodes,
+            //        IsInline = true
+            //    });
 
-                fields.Add(new EmbedFieldBuilder()
-                {
-                    Name = "Rating",
-                    Value = result.Rating,
-                    IsInline = true
-                });
+            //    fields.Add(new EmbedFieldBuilder()
+            //    {
+            //        Name = "Rating",
+            //        Value = result.Rating,
+            //        IsInline = true
+            //    });
 
-                fields.Add(new EmbedFieldBuilder()
-                {
-                    Name = "Tags",
-                    Value = result.GetTags(),
-                    IsInline = true
-                });
+            //    fields.Add(new EmbedFieldBuilder()
+            //    {
+            //        Name = "Tags",
+            //        Value = result.GetTags(),
+            //        IsInline = true
+            //    });
 
-                var foot = new EmbedFooterBuilder()
-                {
-                    IconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Crunchyroll_Logo.png/857px-Crunchyroll_Logo.png",
-                    Text = "Crunchyroll"
-                };
+            //    var foot = new EmbedFooterBuilder()
+            //    {
+            //        IconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Crunchyroll_Logo.png/857px-Crunchyroll_Logo.png",
+            //        Text = "Crunchyroll"
+            //    };
 
-                var builder = new EmbedBuilder()
-                {
-                    Title = result.Name,
-                    Description = result.Description,
-                    ImageUrl = result.Image,
-                    ThumbnailUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Crunchyroll_Logo.png/857px-Crunchyroll_Logo.png",
-                    Color = Color.Orange,
-                    Fields = fields,
-                    Footer = foot,
-                    Author = new EmbedAuthorBuilder()
-                    { Name = result.Publisher },
-                    Url = result.Url
-                };
-                await Context.Channel.DeleteMessageAsync(Context.Message);
-                await Context.Channel.SendMessageAsync(embed: builder.Build());
-            }
-            else
-            {
-                await Context.Channel.DeleteMessageAsync(Context.Message);
-                await Context.Channel.SendMessageAsync($"Anime: '{param}' not found.");
-            }
+            //    var builder = new EmbedBuilder()
+            //    {
+            //        Title = result.Name,
+            //        Description = result.Description,
+            //        ImageUrl = result.Image,
+            //        ThumbnailUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Crunchyroll_Logo.png/857px-Crunchyroll_Logo.png",
+            //        Color = Color.Orange,
+            //        Fields = fields,
+            //        Footer = foot,
+            //        Author = new EmbedAuthorBuilder()
+            //        { Name = result.Publisher },
+            //        Url = result.Url
+            //    };
+            //    await Context.Channel.DeleteMessageAsync(Context.Message);
+            //    await Context.Channel.SendMessageAsync(embed: builder.Build());
+            //}
+            //else
+            //{
+            //    await Context.Channel.DeleteMessageAsync(Context.Message);
+            //    await Context.Channel.SendMessageAsync($"Anime: '{param}' not found.");
+            //}
 
         }
 
