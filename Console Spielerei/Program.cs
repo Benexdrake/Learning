@@ -4,92 +4,526 @@
     {
         public static async Task Main()
         {
-            Test t = new();
 
-            List<string> filePaths = new();
+            Krankheitsbild; ARZT; Arztgruppencode; FachgruppencodeFGC; Zusatzweiterbildung; Teamebene
+1A0100; Allgemeinchirurgie; 0001; 06; ;
+            1A0100; Anästhesiologie; 0002; 04; ;
+            1A0100; Frauenheilkunde und Geburtshilfe; 0003; 15; ;
+            1A0100; Gefäßchirurgie; 0004; 07; ;
+            1A0100; Hals - Nasen - Ohrenheilkunde; 0005; 19; ;
+            1A0100; Humangenetik; 0006; 22; ;
+            1A0100; Innere Medizin und Angiologie; 0007; 24; ;
+            1A0100; Innere Medizin und Endokrinologie und Diabetologie; 0008; 25; ;
+            1A0100; Innere Medizin und Endokrinologie und Diabetologie; 0008; 03; 106;
+            1A0100; Innere Medizin und Endokrinologie und Diabetologie; 0008; 23; 106;
+            1A0100; Innere Medizin und Gastroenterologie; 0009; 26; ;
+            1A0100; Innere Medizin und Hämatologie und Onkologie; 0010; 27; ;
+            1A0100; Innere Medizin und Kardiologie; 0011; 28; ;
+            1A0100; Innere Medizin und Nephrologie; 0012; 29; ;
+            1A0100; Laboratoriumsmedizin; 0013; 48; ;
+            1A0100; Neurologie; 0014; 53; ;
+            1A0100; Nuklearmedizin(Hinzuzuziehende); 0015; 54; ; 4
+1A0100; Nuklearmedizin(Hinzuzuziehende); 0015; 54; ; 3
+1A0100; Nuklearmedizin(Kernteam); 0016; 54; ; 2
+1A0100; Nuklearmedizin(Kernteam); 0016; 54; ; 1
+1A0100; Pathologie; 0017; 56; ;
+            1A0100; Psychiatrie und Psychotherapie; 0018; 58; ;
+            1A0100; Psychosomatische Medizin und Psychotherapie; 0020; 60; ;
+            1A0100; Radiologie; 0021; 62; ;
+            1A0100; Strahlentherapie; 0022; 65; ;
+            1A0100; Urologie; 0023; 67; ;
+            1A0100; Viszeralchirurgie; 0024; 08; ;
+            1A0100; Innere Medizin und Gastroenterologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0025; 23; ;
+            1A0100; Innere Medizin und Gastroenterologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0025; 03; ;
+            1A0100; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0026; 23; ;
+            1A0100; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0026; 03; ;
+            1A0100; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0216; 68; ;
+            1A0100; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0574; 61; ;
+            1A0200; Anästhesiologie; 0002; 04; ;
+            1A0200; Gefäßchirurgie; 0004; 07; ;
+            1A0200; Humangenetik; 0006; 22; ;
+            1A0200; Innere Medizin und Angiologie; 0007; 24; ;
+            1A0200; Innere Medizin und Endokrinologie und Diabetologie; 0008; 25; ;
+            1A0200; Innere Medizin und Endokrinologie und Diabetologie; 0008; 03; 106;
+            1A0200; Innere Medizin und Endokrinologie und Diabetologie; 0008; 23; 106;
+            1A0200; Innere Medizin und Gastroenterologie; 0009; 26; ;
+            1A0200; Innere Medizin und Hämatologie und Onkologie; 0010; 27; ;
+            1A0200; Innere Medizin und Kardiologie; 0011; 28; ;
+            1A0200; Innere Medizin und Nephrologie; 0012; 29; ;
+            1A0200; Laboratoriumsmedizin; 0013; 48; ;
+            1A0200; Neurologie; 0014; 53; ;
+            1A0200; Pathologie; 0017; 56; ;
+            1A0200; Psychiatrie und Psychotherapie; 0018; 58; ;
+            1A0200; Psychosomatische Medizin und Psychotherapie; 0020; 60; ;
+            1A0200; Radiologie; 0021; 62; ;
+            1A0200; Strahlentherapie; 0022; 65; ;
+            1A0200; Urologie; 0023; 67; ;
+            1A0200; Viszeralchirurgie; 0024; 08; ;
+            1A0200; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0026; 23; ;
+            1A0200; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0026; 03; ;
+            1A0200; Frauenheilkunde und Geburtshilfe mit Schwerpunkt Gynäkologische Onkologie; 0027; 17; ;
+            1A0200; Frauenheilkunde und Geburtshilfe mit Schwerpunkt Gynäkologische Onkologie; 0027; 15; ;
+            1A0200; Nuklearmedizin; 0028; 54; ;
+            1A0200; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0218; 68; ;
+            1A0200; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0575; 61; ;
+            1A0201; Anästhesiologie; 0002; 04; ;
+            1A0201; Gefäßchirurgie; 0004; 07; ;
+            1A0201; Humangenetik; 0006; 22; ;
+            1A0201; Innere Medizin und Angiologie; 0007; 24; ;
+            1A0201; Innere Medizin und Hämatologie und Onkologie; 0010; 27; ;
+            1A0201; Innere Medizin und Kardiologie; 0011; 28; ;
+            1A0201; Laboratoriumsmedizin; 0013; 48; ;
+            1A0201; Neurologie; 0014; 53; ;
+            1A0201; Pathologie; 0017; 56; ;
+            1A0201; Psychiatrie und Psychotherapie; 0018; 58; ;
+            1A0201; Psychosomatische Medizin und Psychotherapie; 0020; 60; ;
+            1A0201; Radiologie; 0021; 62; ;
+            1A0201; Strahlentherapie; 0022; 65; ;
+            1A0201; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0026; 23; ;
+            1A0201; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0026; 03; ;
+            1A0201; Frauenheilkunde und Geburtshilfe mit Schwerpunkt Gynäkologische Onkologie; 0027; 17; ;
+            1A0201; Frauenheilkunde und Geburtshilfe mit Schwerpunkt Gynäkologische Onkologie; 0027; 15; ;
+            1A0201; Nuklearmedizin; 0028; 54; ;
+            1A0201; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0220; 68; ;
+            1A0201; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0576; 61; ;
+            1A0202; Anästhesiologie; 0002; 04; ;
+            1A0202; Gefäßchirurgie; 0004; 07; ;
+            1A0202; Humangenetik; 0006; 22; ;
+            1A0202; Innere Medizin und Angiologie; 0007; 24; ;
+            1A0202; Innere Medizin und Endokrinologie und Diabetologie; 0008; 25; ;
+            1A0202; Innere Medizin und Endokrinologie und Diabetologie; 0008; 03; 106;
+            1A0202; Innere Medizin und Endokrinologie und Diabetologie; 0008; 23; 106;
+            1A0202; Innere Medizin und Gastroenterologie; 0009; 26; ;
+            1A0202; Innere Medizin und Hämatologie und Onkologie; 0010; 27; ;
+            1A0202; Innere Medizin und Kardiologie; 0011; 28; ;
+            1A0202; Innere Medizin und Nephrologie; 0012; 29; ;
+            1A0202; Laboratoriumsmedizin; 0013; 48; ;
+            1A0202; Neurologie; 0014; 53; ;
+            1A0202; Pathologie; 0017; 56; ;
+            1A0202; Psychiatrie und Psychotherapie; 0018; 58; ;
+            1A0202; Psychosomatische Medizin und Psychotherapie; 0020; 60; ;
+            1A0202; Radiologie; 0021; 62; ;
+            1A0202; Strahlentherapie; 0022; 65; ;
+            1A0202; Urologie; 0023; 67; ;
+            1A0202; Viszeralchirurgie; 0024; 08; ;
+            1A0202; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0026; 23; ;
+            1A0202; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0026; 03; ;
+            1A0202; Frauenheilkunde und Geburtshilfe mit Schwerpunkt Gynäkologische Onkologie; 0027; 17; ;
+            1A0202; Frauenheilkunde und Geburtshilfe mit Schwerpunkt Gynäkologische Onkologie; 0027; 15; ;
+            1A0202; Nuklearmedizin; 0028; 54; ;
+            1A0202; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0222; 68; ;
+            1A0202; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0577; 61; ;
+            1A0300; Anästhesiologie; 0002; 04; ;
+            1A0300; Frauenheilkunde und Geburtshilfe; 0003; 15; ;
+            1A0300; Gefäßchirurgie; 0004; 07; ;
+            1A0300; Humangenetik; 0006; 22; ;
+            1A0300; Innere Medizin und Gastroenterologie; 0009; 26; ;
+            1A0300; Innere Medizin und Hämatologie und Onkologie; 0010; 27; ;
+            1A0300; Innere Medizin und Kardiologie; 0011; 28; ;
+            1A0300; Innere Medizin und Nephrologie; 0012; 29; ;
+            1A0300; Laboratoriumsmedizin; 0013; 48; ;
+            1A0300; Neurologie; 0014; 53; ;
+            1A0300; Pathologie; 0017; 56; ;
+            1A0300; Psychiatrie und Psychotherapie; 0018; 58; ;
+            1A0300; Psychosomatische Medizin und Psychotherapie; 0020; 60; ;
+            1A0300; Radiologie; 0021; 62; ;
+            1A0300; Strahlentherapie; 0022; 65; ;
+            1A0300; Urologie; 0023; 67; ;
+            1A0300; Viszeralchirurgie; 0024; 08; ;
+            1A0300; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0026; 23; ;
+            1A0300; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0026; 03; ;
+            1A0300; Nuklearmedizin; 0028; 54; ;
+            1A0300; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0234; 68; ;
+            1A0300; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0560; 61; ;
+            1A0400; Anästhesiologie; 0169; 04; ;
+            1A0400; Frauenheilkunde und Geburtshilfe; 0170; 15; ;
+            1A0400; Haut - und Geschlechtskrankheiten; 0171; 21; ;
+            1A0400; Innere Medizin und Gastroenterologie; 0172; 26; ;
+            1A0400; Innere Medizin und Hämatologie und Onkologie; 0173; 27; ;
+            1A0400; Innere Medizin und Kardiologie; 0174; 28; ;
+            1A0400; Innere Medizin und Pneumologie; 0175; 30; ;
+            1A0400; Laboratoriumsmedizin; 0176; 48; ;
+            1A0400; Neurologie; 0177; 53; ;
+            1A0400; Nuklearmedizin; 0178; 54; ;
+            1A0400; Pathologie; 0179; 56; ;
+            1A0400; Psychiatrie und Psychotherapie; 0181; 58; ;
+            1A0400; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0182; 68; ;
+            1A0400; Psychosomatische Medizin und Psychotherapie; 0183; 60; ;
+            1A0400; Radiologie; 0184; 62; ;
+            1A0400; Strahlentherapie; 0185; 65; ;
+            1A0400; Urologie; 0186; 67; ;
+            1A0400; Viszeralchirurgie; 0187; 08; ;
+            1A0400; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0189; 23; ;
+            1A0400; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0189; 03; ;
+            1A0400; Mund - Kiefer - Gesichtschirurgie; 0389; 50; ;
+            1A0400; Plastische, Rekonstruktive und Ästhetische Chirurgie; 0390; 13; ;
+            1A0400; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0561; 61; ;
+            1A0500; Anästhesiologie; 0311; 04; ;
+            1A0500; Gefäßchirurgie; 0312; 07; ;
+            1A0500; Herzchirurgie; 0313; 99; ;
+            1A0500; Innere Medizin und Angiologie; 0314; 24; ;
+            1A0500; Innere Medizin und Endokrinologie und Diabetologie; 0315; 25; ;
+            1A0500; Innere Medizin und Endokrinologie und Diabetologie; 0315; 03; 106;
+            1A0500; Innere Medizin und Endokrinologie und Diabetologie; 0315; 23; 106;
+            1A0500; Innere Medizin und Gastroenterologie; 0316; 26; ;
+            1A0500; Innere Medizin und Hämatologie und Onkologie; 0317; 27; ;
+            1A0500; Innere Medizin und Kardiologie(Hinzuzuziehende); 0318; 28; ; 4
+1A0500; Innere Medizin und Kardiologie(Hinzuzuziehende); 0318; 28; ; 3
+1A0500; Innere Medizin und Kardiologie(Kernteam); 0319; 28; ; 2
+1A0500; Innere Medizin und Kardiologie(Kernteam); 0319; 28; ; 1
+1A0500; Innere Medizin und Pneumologie; 0320; 30; ;
+            1A0500; Laboratoriumsmedizin; 0321; 48; ;
+            1A0500; Neurochirurgie; 0322; 52; ;
+            1A0500; Neurologie; 0323; 53; ;
+            1A0500; Nuklearmedizin; 0324; 54; ;
+            1A0500; Orthopädie und Unfallchirurgie; 0325; 10; ;
+            1A0500; Pathologie; 0326; 56; ;
+            1A0500; Psychiatrie und Psychotherapie; 0327; 58; ;
+            1A0500; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0328; 68; ;
+            1A0500; Psychosomatische Medizin und Psychotherapie; 0329; 60; ;
+            1A0500; Radiologie; 0330; 62; ;
+            1A0500; Strahlentherapie; 0331; 65; ;
+            1A0500; Thoraxchirurgie; 0332; 14; ;
+            1A0500; Viszeralchirurgie; 0333; 08; ;
+            1A0500; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0335; 23; ;
+            1A0500; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0335; 03; ;
+            1A0500; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0562; 61; ;
+            1A0600; Anästhesiologie; 0507; 04; ;
+            1A0600; Augenheilkunde; 0508; 05; ;
+            1A0600; Gefäßchirurgie; 0509; 07; ;
+            1A0600; Hals - Nasen - Ohrenheilkunde; 0510; 19; ;
+            1A0600; Haut - und Geschlechtskrankheiten; 0511; 21; ;
+            1A0600; Humangenetik; 0512; 22; ;
+            1A0600; Innere Medizin und Endokrinologie und Diabetologie; 0513; 25; ;
+            1A0600; Innere Medizin und Endokrinologie und Diabetologie; 0513; 03; 106;
+            1A0600; Innere Medizin und Endokrinologie und Diabetologie; 0513; 23; 106;
+            1A0600; Innere Medizin und Gastroenterologie; 0514; 26; ;
+            1A0600; Innere Medizin und Hämatologie und Onkologie; 0515; 27; ;
+            1A0600; Innere Medizin und Kardiologie; 0516; 28; ;
+            1A0600; Innere Medizin und Pneumologie; 0517; 30; ;
+            1A0600; Laboratoriumsmedizin; 0518; 48; ;
+            1A0600; Mund - Kiefer - Gesichtschirurgie; 0519; 50; ;
+            1A0600; Neurochirurgie; 0520; 52; ;
+            1A0600; Neurologie; 0521; 53; ;
+            1A0600; Nuklearmedizin(Hinzuzuziehende); 0522; 54; ; 4
+1A0600; Nuklearmedizin(Hinzuzuziehende); 0522; 54; ; 3
+1A0600; Nuklearmedizin(Kernteam); 0523; 54; ; 2
+1A0600; Nuklearmedizin(Kernteam); 0523; 54; ; 1
+1A0600; Pathologie; 0524; 56; ;
+            1A0600; Psychiatrie und Psychotherapie; 0525; 58; ;
+            1A0600; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0526; 68; ;
+            1A0600; Psychosomatische Medizin und Psychotherapie; 0527; 60; ;
+            1A0600; Radiologie; 0528; 62; ;
+            1A0600; Strahlentherapie; 0529; 65; ;
+            1A0600; Viszeralchirurgie(Kernteam); 0530; 08; ; 2
+1A0600; Viszeralchirurgie(Kernteam); 0530; 08; ; 1
+1A0600; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0532; 23; ;
+            1A0600; Innere Medizin und Hämatologie und Onkologie ohne genannten Schwerpunkt und mit KV-Genehmigung; 0532; 03; ;
+            1A0600; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0572; 61; ;
+            1B0100; Hals - Nasen - Ohrenheilkunde; 0005; 19; ;
+            1B0100; Humangenetik; 0006; 22; ;
+            1B0100; Innere Medizin und Angiologie; 0007; 24; ;
+            1B0100; Innere Medizin und Gastroenterologie; 0009; 26; ;
+            1B0100; Innere Medizin und Hämatologie und Onkologie; 0010; 27; ;
+            1B0100; Innere Medizin und Kardiologie; 0011; 28; ;
+            1B0100; Innere Medizin und Nephrologie; 0012; 29; ;
+            1B0100; Laboratoriumsmedizin; 0013; 48; ;
+            1B0100; Neurologie; 0014; 53; ;
+            1B0100; Pathologie; 0017; 56; ;
+            1B0100; Psychiatrie und Psychotherapie; 0018; 58; ;
+            1B0100; Psychosomatische Medizin und Psychotherapie; 0020; 60; ;
+            1B0100; Radiologie; 0021; 62; ;
+            1B0100; Nuklearmedizin; 0028; 54; ;
+            1B0100; Augenheilkunde; 0029; 05; ;
+            1B0100; Innere Medizin und Pneumologie; 0031; 30; ;
+            1B0100; Mikrobiologie, Virologie und Infektionsepidemiologie; 0033; 49; ;
+            1B0100; Innere Medizin und Rheumatologie; 0046; 31; ;
+            1B0100; Haut - und Geschlechtskrankheiten; 0049; 21; ;
+            1B0100; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0193; 68; ;
+            1B0100; Orthopädie und Unfallchirurgie mit Zusatz - Weiterbildung Orthopädische Rheumatologie; 0376; 12; ;
+            1B0100; Orthopädie und Unfallchirurgie mit Zusatz - Weiterbildung Orthopädische Rheumatologie; 0376; 10; ;
+            1B0100; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0563; 61; ;
+            1B0101; Hals - Nasen - Ohrenheilkunde; 0005; 19; ;
+            1B0101; Humangenetik; 0006; 22; ;
+            1B0101; Innere Medizin und Angiologie; 0007; 24; ;
+            1B0101; Innere Medizin und Gastroenterologie; 0009; 26; ;
+            1B0101; Innere Medizin und Hämatologie und Onkologie; 0010; 27; ;
+            1B0101; Innere Medizin und Kardiologie; 0011; 28; ;
+            1B0101; Innere Medizin und Nephrologie; 0012; 29; ;
+            1B0101; Laboratoriumsmedizin; 0013; 48; ;
+            1B0101; Neurologie; 0014; 53; ;
+            1B0101; Pathologie; 0017; 56; ;
+            1B0101; Psychiatrie und Psychotherapie; 0018; 58; ;
+            1B0101; Psychosomatische Medizin und Psychotherapie; 0020; 60; ;
+            1B0101; Radiologie; 0021; 62; ;
+            1B0101; Augenheilkunde; 0029; 05; ;
+            1B0101; Innere Medizin und Pneumologie; 0031; 30; ;
+            1B0101; Mikrobiologie, Virologie und Infektionsepidemiologie; 0033; 49; ;
+            1B0101; Kinder - und Jugendpsychiatrie und -psychotherapie; 0044; 47; ;
+            1B0101; Haut - und Geschlechtskrankheiten; 0049; 21; ;
+            1B0101; Kinder - und Jugendlichenpsychotherapeutin oder Kinder - und Jugendlichenpsychotherapeut; 0052; 69; ;
+            1B0101; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0191; 68; ;
+            1B0101; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-und Jugend - Hämatologie und - Onkologie; 0377; 41; ;
+            1B0101; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-und Jugend - Hämatologie und - Onkologie; 0377; 35; ;
+            1B0101; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-und Jugend - Kardiologie; 0378; 42; ;
+            1B0101; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-und Jugend - Kardiologie; 0378; 36; ;
+            1B0101; Kinder - und Jugendmedizin mit Schwerpunkt Neuropädiatrie; 0379; 44; ;
+            1B0101; Kinder - und Jugendmedizin mit Schwerpunkt Neuropädiatrie; 0379; 38; ;
+            1B0101; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0380; 40; 091;
+            1B0101; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0380; 34; 091;
+            1B0101; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Nephrologie; 0381; 40; 092;
+            1B0101; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Nephrologie; 0381; 34; 092;
+            1B0101; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0382; 45; ;
+            1B0101; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0382; 34; 094;
+            1B0101; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0382; 39; ;
+            1B0101; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0382; 40; 094;
+            1B0101; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Rheumatologie; 0383; 40; 095;
+            1B0101; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Rheumatologie; 0383; 34; 095;
+            1B0101; Orthopädie und Unfallchirurgie mit Zusatz - Weiterbildung Orthopädische Rheumatologie; 0384; 12; ;
+            1B0101; Orthopädie und Unfallchirurgie mit Zusatz - Weiterbildung Orthopädische Rheumatologie; 0384; 10; ;
+            1B0101; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0564; 61; ;
+            2A0100; Hals - Nasen - Ohrenheilkunde; 0005; 19; ;
+            2A0100; Innere Medizin und Gastroenterologie; 0009; 26; ;
+            2A0100; Laboratoriumsmedizin; 0013; 48; ;
+            2A0100; Neurologie; 0014; 53; ;
+            2A0100; Pathologie; 0017; 56; ;
+            2A0100; Radiologie; 0021; 62; ;
+            2A0100; Urologie; 0023; 67; ;
+            2A0100; Augenheilkunde; 0029; 05; ;
+            2A0100; Innere Medizin und Pneumologie; 0031; 30; ;
+            2A0100; Kinder - und Jugendmedizin; 0032; 40; ;
+            2A0100; Kinder - und Jugendmedizin; 0032; 34; ;
+            2A0100; Mikrobiologie, Virologie und Infektionsepidemiologie; 0033; 49; ;
+            2A0100; Orthopädie und Unfallchirurgie; 0034; 10; ;
+            2A0100; Kinder - und Jugendmedizin mit Schwerpunkt Neuropädiatrie; 0035; 44; ;
+            2A0100; Kinder - und Jugendmedizin mit Schwerpunkt Neuropädiatrie; 0035; 38; ;
+            2A0100; Innere Medizin mit Zusatz-Weiterbildung Infektiologie; 0391; 33; ;
+            2A0100; Innere Medizin mit Zusatz-Weiterbildung Infektiologie; 0391; 03; 076;
+            2A0100; Innere Medizin mit Zusatz-Weiterbildung Infektiologie; 0391; 23; 076;
+            2A0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0392; 40; 091;
+            2A0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0392; 34; 091;
+            2A0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0393; 45; ;
+            2A0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0393; 34; 094;
+            2A0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0393; 39; ;
+            2A0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0393; 40; 094;
+            2B0100; Frauenheilkunde und Geburtshilfe; 0003; 15; ;
+            2B0100; Hals - Nasen - Ohrenheilkunde; 0005; 19; ;
+            2B0100; Humangenetik; 0006; 22; ;
+            2B0100; Innere Medizin und Endokrinologie und Diabetologie; 0008; 25; ;
+            2B0100; Innere Medizin und Endokrinologie und Diabetologie; 0008; 03; 106;
+            2B0100; Innere Medizin und Endokrinologie und Diabetologie; 0008; 23; 106;
+            2B0100; Innere Medizin und Gastroenterologie; 0009; 26; ;
+            2B0100; Innere Medizin und Kardiologie; 0011; 28; ;
+            2B0100; Laboratoriumsmedizin; 0013; 48; ;
+            2B0100; Pathologie; 0017; 56; ;
+            2B0100; Psychiatrie und Psychotherapie; 0018; 58; ;
+            2B0100; Psychosomatische Medizin und Psychotherapie; 0020; 60; ;
+            2B0100; Radiologie; 0021; 62; ;
+            2B0100; Urologie; 0023; 67; ;
+            2B0100; Innere Medizin und Pneumologie; 0031; 30; ;
+            2B0100; Mikrobiologie, Virologie und Infektionsepidemiologie; 0033; 49; ;
+            2B0100; Kinder - und Jugendmedizin; 0039; 40; ;
+            2B0100; Kinder - und Jugendmedizin; 0039; 34; ;
+            2B0100; Kinder - und Jugendlichenpsychotherapeutin bzw. Kinder - und Jugendlichenpsychotherapeut; 0040; 69; ;
+            2B0100; Kinder - und Jugendpsychiatrie und -psychotherapie; 0225; 47; ;
+            2B0100; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0226; 68; ;
+            2B0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Endokrinologie und - Diabetologie; 0366; 40; 090;
+            2B0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Endokrinologie und - Diabetologie; 0366; 34; 090;
+            2B0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0367; 40; 091;
+            2B0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0367; 34; 091;
+            2B0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0368; 45; ;
+            2B0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0368; 34; 094;
+            2B0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0368; 39; ;
+            2B0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0368; 40; 094;
+            2B0100; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-und Jugend - Kardiologie; 0578; 36; ;
+            2B0100; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0579; 61; ;
+            2B0100; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-und Jugend - Kardiologie; 0580; 36; ;
+            2B0100; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-und Jugend - Kardiologie; 0580; 42; ;
+            2C0100; Allgemeinchirurgie; 0242; 06; ;
+            2C0100; Frauenheilkunde und Geburtshilfe; 0243; 15; ;
+            2C0100; Humangenetik; 0245; 22; ;
+            2C0100; Innere Medizin mit Zusatz-Weiterbildung Hämostaseologie; 0246; 23; 075;
+            2C0100; Innere Medizin mit Zusatz-Weiterbildung Hämostaseologie; 0246; 03; 075;
+            2C0100; Innere Medizin und Gastroenterologie; 0247; 26; ;
+            2C0100; Innere Medizin und Hämatologie und Onkologie mit Zusatz-Weiterbildung Hämostaseologie; 0248; 27; 075;
+            2C0100; Kinder - und Jugendmedizin; 0250; 40; ;
+            2C0100; Kinder - und Jugendmedizin; 0250; 34; ;
+            2C0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Hämostaseologie; 0251; 40; 075;
+            2C0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Hämostaseologie; 0251; 34; 075;
+            2C0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0252; 40; 091;
+            2C0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0252; 34; 091;
+            2C0100; Kinder - und Jugendpsychiatrie und -psychotherapie; 0253; 47; ;
+            2C0100; Laboratoriumsmedizin; 0254; 48; ;
+            2C0100; Orthopädie und Unfallchirurgie; 0255; 10; ;
+            2C0100; Psychiatrie und Psychotherapie; 0256; 58; ;
+            2C0100; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0257; 68; ;
+            2C0100; Psychosomatische Medizin und Psychotherapie; 0258; 60; ;
+            2C0100; Radiologie; 0259; 62; ;
+            2C0100; Transfusionsmedizin mit Zusatz - Weiterbildung Hämostaseologie; 0260; 66; 075;
+            2C0100; Innere Medizin und Hämatologie und Onkologie mit Zusatz-Weiterbildung Hämostaseologie ohne genannten Schwerpunkt und mit KV - Genehmigung; 0262; 23; 075;
+            2C0100; Innere Medizin und Hämatologie und Onkologie mit Zusatz-Weiterbildung Hämostaseologie ohne genannten Schwerpunkt und mit KV - Genehmigung; 0262; 03; 075;
+            2C0100; Kinder - und Jugendlichenpsychotherapeutin bzw. Kinder - und Jugendlichenpsychotherapeut; 0398; 69; ;
+            2C0100; Hals - Nasen - Ohrenheilkunde; 0565; 19; ;
+            2C0100; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0566; 61; ;
+            2D0100; Augenheilkunde; 0533; 05; ;
+            2D0100; Humangenetik; 0534; 22; ;
+            2D0100; Innere Medizin und Gastroenterologie; 0535; 26; ;
+            2D0100; Innere Medizin und Kardiologie; 0536; 28; ;
+            2D0100; Innere Medizin und Pneumologie; 0537; 30; ;
+            2D0100; Innere Medizin und Rheumatologie; 0538; 31; ;
+            2D0100; Kinder - und Jugendchirurgie mit Zusatz - Weiterbildung Kinder - und Jugend - Orthopädie; 0539; 09; 168;
+            2D0100; Kinder - und Jugendlichenpsychotherapeutin oder Kinder - und Jugendlichenpsychotherapeut; 0540; 69; ;
+            2D0100; Kinder - und Jugendmedizin; 0541; 40; ;
+            2D0100; Kinder - und Jugendmedizin; 0541; 34; ;
+            2D0100; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-und Jugend - Kardiologie; 0542; 42; ;
+            2D0100; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-und Jugend - Kardiologie; 0542; 36; ;
+            2D0100; Kinder - und Jugendmedizin mit Schwerpunkt Neuropädiatrie; 0543; 44; ;
+            2D0100; Kinder - und Jugendmedizin mit Schwerpunkt Neuropädiatrie; 0543; 38; ;
+            2D0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0544; 40; 091;
+            2D0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0544; 34; 091;
+            2D0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0545; 45; ;
+            2D0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0545; 34; 094;
+            2D0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0545; 39; ;
+            2D0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0545; 40; 094;
+            2D0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Rheumatologie; 0546; 40; 095;
+            2D0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Rheumatologie; 0546; 34; 095;
+            2D0100; Kinder - und Jugendpsychiatrie und -psychotherapie; 0547; 47; ;
+            2D0100; Laboratoriumsmedizin; 0548; 48; ;
+            2D0100; Neurologie; 0549; 53; ;
+            2D0100; Neuropathologie; 0550; 55; ;
+            2D0100; Nuklearmedizin; 0551; 54; ;
+            2D0100; Orthopädie und Unfallchirurgie; 0552; 10; ;
+            2D0100; Orthopädie und Unfallchirurgie mit Zusatz - Weiterbildung Kinder - und Jugend - Orthopädie; 0553; 10; 168;
+            2D0100; Pathologie; 0554; 56; ;
+            2D0100; Psychiatrie und Psychotherapie; 0555; 58; ;
+            2D0100; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0556; 68; ;
+            2D0100; Psychosomatische Medizin und Psychotherapie; 0557; 60; ;
+            2D0100; Radiologie; 0558; 62; ;
+            2D0100; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0573; 61; ;
+            2E0100; Augenheilkunde; 0336; 05; ;
+            2E0100; Haut - und Geschlechtskrankheiten; 0337; 21; ;
+            2E0100; Innere Medizin und Gastroenterologie; 0338; 26; ;
+            2E0100; Innere Medizin und Kardiologie; 0339; 28; ;
+            2E0100; Innere Medizin und Pneumologie; 0340; 30; ;
+            2E0100; Innere Medizin und Rheumatologie; 0341; 31; ;
+            2E0100; Kinder - und Jugendlichenpsychotherapeutin oder Kinder - und Jugendlichenpsychotherapeut; 0342; 69; ;
+            2E0100; Kinder - und Jugendmedizin; 0343; 40; ;
+            2E0100; Kinder - und Jugendmedizin; 0343; 34; ;
+            2E0100; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-Kardiologie; 0344; 42; ;
+            2E0100; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-Kardiologie; 0344; 36; ;
+            2E0100; Kinder - und Jugendmedizin mit Schwerpunkt Neuropädiatrie; 0345; 44; ;
+            2E0100; Kinder - und Jugendmedizin mit Schwerpunkt Neuropädiatrie; 0345; 38; ;
+            2E0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - Gastroenterologie; 0346; 40; 091;
+            2E0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - Gastroenterologie; 0346; 34; 091;
+            2E0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - Pneumologie; 0347; 45; ;
+            2E0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - Pneumologie; 0347; 34; 094;
+            2E0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - Pneumologie; 0347; 39; ;
+            2E0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - Pneumologie; 0347; 40; 094;
+            2E0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - Rheumatologie; 0348; 40; 095;
+            2E0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - Rheumatologie; 0348; 34; 095;
+            2E0100; Kinder - und Jugendpsychiatrie und -psychotherapie; 0349; 47; ;
+            2E0100; Laboratoriumsmedizin; 0350; 48; ;
+            2E0100; Neurologie; 0351; 53; ;
+            2E0100; Nuklearmedizin; 0352; 54; ;
+            2E0100; Pathologie; 0353; 56; ;
+            2E0100; Psychiatrie und Psychotherapie; 0354; 58; ;
+            2E0100; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0355; 68; ;
+            2E0100; Psychosomatische Medizin und Psychotherapie; 0356; 60; ;
+            2E0100; Radiologie; 0357; 62; ;
+            2E0100; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0567; 61; ;
+            2H0100; Humangenetik; 0006; 22; ;
+            2H0100; Innere Medizin und Gastroenterologie; 0009; 26; ;
+            2H0100; Innere Medizin und Nephrologie; 0012; 29; ;
+            2H0100; Laboratoriumsmedizin; 0013; 48; ;
+            2H0100; Neurologie; 0014; 53; ;
+            2H0100; Pathologie; 0017; 56; ;
+            2H0100; Psychiatrie und Psychotherapie; 0018; 58; ;
+            2H0100; Psychosomatische Medizin und Psychotherapie; 0020; 60; ;
+            2H0100; Radiologie; 0021; 62; ;
+            2H0100; Augenheilkunde; 0029; 05; ;
+            2H0100; Kinder - und Jugendmedizin; 0032; 40; ;
+            2H0100; Kinder - und Jugendmedizin; 0032; 34; ;
+            2H0100; Kinder - und Jugendpsychiatrie und -psychotherapie; 0044; 47; ;
+            2H0100; Kinder - und Jugendlichenpsychotherapeutin oder Kinder - und Jugendlichenpsychotherapeut; 0236; 69; ;
+            2H0100; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0237; 68; ;
+            2H0100; Kinder - und Jugendmedizin mit Schwerpunkt Neuropädiatrie; 0369; 44; ;
+            2H0100; Kinder - und Jugendmedizin mit Schwerpunkt Neuropädiatrie; 0369; 38; ;
+            2H0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0370; 40; 091;
+            2H0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0370; 34; 091;
+            2H0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Nephrologie; 0371; 40; 092;
+            2H0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Nephrologie; 0371; 34; 092;
+            2H0100; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0568; 61; ;
+            2K0100; Frauenheilkunde und Geburtshilfe; 0003; 15; ;
+            2K0100; Gefäßchirurgie; 0004; 07; ;
+            2K0100; Humangenetik; 0006; 22; ;
+            2K0100; Innere Medizin und Kardiologie; 0011; 28; ;
+            2K0100; Laboratoriumsmedizin; 0013; 48; ;
+            2K0100; Psychiatrie und Psychotherapie; 0018; 58; ;
+            2K0100; Psychosomatische Medizin und Psychotherapie; 0020; 60; ;
+            2K0100; Radiologie; 0021; 62; ;
+            2K0100; Augenheilkunde; 0029; 05; ;
+            2K0100; Innere Medizin und Pneumologie; 0031; 30; ;
+            2K0100; Kinder - und Jugendmedizin; 0032; 40; ;
+            2K0100; Kinder - und Jugendmedizin; 0032; 34; ;
+            2K0100; Orthopädie und Unfallchirurgie; 0034; 10; ;
+            2K0100; Kinder - und Jugendlichenpsychotherapeutin bzw. Kinder - und Jugendlichenpsychotherapeut; 0040; 69; ;
+            2K0100; Herzchirurgie; 0042; 99; ;
+            2K0100; Kinder - und Jugendpsychiatrie und -psychotherapie; 0044; 47; ;
+            2K0100; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0232; 68; ;
+            2K0100; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-und Jugend - Kardiologie; 0396; 42; ;
+            2K0100; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-und Jugend - Kardiologie; 0396; 36; ;
+            2K0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0397; 45; ;
+            2K0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0397; 34; 094;
+            2K0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0397; 39; ;
+            2K0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0397; 40; 094;
+            2K0100; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0569; 61; ;
+            2L0100; Humangenetik; 0006; 22; ;
+            2L0100; Innere Medizin und Gastroenterologie; 0009; 26; ;
+            2L0100; Innere Medizin und Kardiologie; 0011; 28; ;
+            2L0100; Laboratoriumsmedizin; 0013; 48; ;
+            2L0100; Psychiatrie und Psychotherapie; 0018; 58; ;
+            2L0100; Psychosomatische Medizin und Psychotherapie; 0020; 60; ;
+            2L0100; Radiologie; 0021; 62; ;
+            2L0100; Nuklearmedizin; 0028; 54; ;
+            2L0100; Innere Medizin und Pneumologie; 0031; 30; ;
+            2L0100; Kinder - und Jugendmedizin; 0032; 40; ;
+            2L0100; Kinder - und Jugendmedizin; 0032; 34; ;
+            2L0100; Kinder - und Jugendlichenpsychotherapeutin bzw. Kinder - und Jugendlichenpsychotherapeut; 0040; 69; ;
+            2L0100; Kinder - und Jugendpsychiatrie und -psychotherapie; 0044; 47; ;
+            2L0100; Innere Medizin und Rheumatologie; 0046; 31; ;
+            2L0100; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0229; 68; ;
+            2L0100; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-und Jugend - Kardiologie; 0372; 42; ;
+            2L0100; Kinder - und Jugendmedizin mit Schwerpunkt Kinder-und Jugend - Kardiologie; 0372; 36; ;
+            2L0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0373; 40; 091;
+            2L0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0373; 34; 091;
+            2L0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0374; 45; ;
+            2L0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0374; 34; 094;
+            2L0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0374; 39; ;
+            2L0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Pneumologie; 0374; 40; 094;
+            2L0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Rheumatologie; 0375; 40; 095;
+            2L0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Rheumatologie; 0375; 34; 095;
+            2L0100; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0570; 61; ;
+            2O0100; Innere Medizin und Gastroenterologie; 0062; 26; ;
+            2O0100; Innere Medizin und Rheumatologie; 0063; 31; ;
+            2O0100; Kinder - und Jugendmedizin; 0065; 40; ;
+            2O0100; Kinder - und Jugendmedizin; 0065; 34; ;
+            2O0100; Kinder - und Jugendpsychiatrie und -psychotherapie; 0067; 47; ;
+            2O0100; Laboratoriumsmedizin; 0068; 48; ;
+            2O0100; Pathologie; 0069; 56; ;
+            2O0100; Psychiatrie und Psychotherapie; 0070; 58; ;
+            2O0100; Psychosomatische Medizin und Psychotherapie; 0072; 60; ;
+            2O0100; Radiologie; 0073; 62; ;
+            2O0100; Viszeralchirurgie; 0074; 08; ;
+            2O0100; Kinder - und Jugendlichenpsychotherapeutin oder Kinder - und Jugendlichenpsychotherapeut; 0239; 69; ;
+            2O0100; Psychologische Psychotherapeutin oder Psychologischer Psychotherapeut; 0240; 68; ;
+            2O0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0385; 40; 091;
+            2O0100; Kinder - und Jugendmedizin mit Zusatz - Weiterbildung Kinder - und Jugend - Gastroenterologie; 0385; 34; 091;
+            2O0100; Ärztliche Psychotherapeutin oder Ärztlicher Psychotherapeut; 0571; 61; ;
 
-            string mainPath = "C:\\Users\\RichterB\\Desktop";
-            string searchPath = Path.Combine(mainPath, "Ordner");
-            string outputPath = Path.Combine(mainPath, "Output");
-            string savePath = Path.Combine(outputPath, "Combined");
 
-            string zipPath = Path.Combine(outputPath, "zip");
-            string unZipPath = Path.Combine(outputPath, "unzip");
+            BereitstellungLogic bl = new();
 
-            t.directoriesPathList.Add(searchPath);
-
-
-
-
-
-
-            // Sucht nach Ordnern
-            t.FindDirectories(searchPath);
-
-            // Ausgabe aller gefundenen Ordner
-            foreach (var path in t.directoriesPathList)
-            {
-                Console.WriteLine(path);
-                // durchsucht jeden Ordner nach .txt Dateien
-                var files = t.FindFile(path, "txt").Result;
-
-                // Gefundene Dateien werden in eine Liste gespeichert.
-                foreach (var f in files)
-                {
-                    filePaths.Add(f);
-                }
-            }
-            
-            foreach (var f in filePaths)
-            {
-                // Trennt den Pfad von dem Dateinamen
-                // Dateiname
-                string file = t.GetFileName(f);
-                // Ordnerpfad
-                string filePath = t.GetPathName(f);
-
-                // Bewegt die gefundenen Dateien aus dem Ordnerpfad in einen neuen Ordner.
-                t.MoveFile(filePath,outputPath,file);
-            }
-
-            // Sucht alle Dateien aus dem Ordner Output mit der Endung .txt
-            var outputFiles = t.FindFile(outputPath,"txt").Result;
-
-            foreach (var file in outputFiles)
-            {
-                var readFile = t.ReadFile(file);
-
-                // Sortiert Einträge nach Suchparameter und speichert diese in eigene Dateien.
-                await t.SaveFile(readFile.ToArray(), "ABSCHNITT", savePath, "csv");
-                await t.SaveFile(readFile.ToArray(), "ARZTGRUPPEN", savePath, "csv");
-            }
-
-
-            // Suchen nach .Zip Dateien im Ordner Ordner
-
-            var zipFiles = t.FindFile(searchPath,"zip").Result;
-
-            foreach (var zip in zipFiles)
-            {
-                // kopieren der Dateien nach Output\zip
-                // Trennt den Pfad von dem Dateinamen
-                // Dateiname
-                string file = t.GetFileName(zip);
-                // Ordnerpfad
-                string filePath = t.GetPathName(zip);
-                // Bewegt die gefundenen Dateien aus dem Ordnerpfad in einen neuen Ordner.
-                t.MoveFile(filePath, zipPath, file);
-            }
-
-
-            // Sucht nach .zip Dateien im zip Ordner
-            zipFiles = t.FindFile(zipPath, "zip").Result;
-
-            foreach (var zip in zipFiles)
-            {
-                // Entpackt Dateien im unzip Ordner
-                t.UnpackZip(zip, unZipPath);
-            }
+           await bl.Start("C:\\Users\\RichterB\\Desktop\\BenR\\LogicTesting");
 
         }
     }
