@@ -4,12 +4,8 @@ namespace Console_Spielerei
     {
         public static async Task Main()
         {
-
-            
-
             BereitstellungLogic bl = new();
-
-           await bl.Start("C:\\Users\\RichterB\\Desktop\\BenR\\LogicTesting");
+            await bl.Start("C:\\Users\\Benex\\Desktop\\Demo\\Neu", "C:\\Users\\Benex\\Desktop\\Demo\\vorquartal", "");
 
         }
     }
